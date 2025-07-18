@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Voice App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PODCAST GENERATOR</h1>
+        <textarea id="text-input" placeholder="Enter text here"></textarea>
+        <button id="speak-btn">Speak</button>
+    </div>
+    <footer class="footer">
+        Created by Abinesh Muthu
+    </footer>
+    <script>
+        function speak() {
+            const text = document.getElementById('text-input').value;
+            const utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+        document.getElementById('speak-btn').addEventListener('click', speak);
+    </script>
+</body>
+</html> 
